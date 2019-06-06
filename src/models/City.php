@@ -5,24 +5,25 @@ namespace Albertgpdev\SpainProvinceSeeder\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Province extends Model
+class City extends Model
 {
-    protected $table = "provinces";
+    protected $table = "cities";
     protected $fillable = [
         'id',
         'slug',
         'name',
-        'state_id',
-        'capital_city_id'
+        'province_id',
+        'latitude',
+        'longitude',
     ];
 
-    public function city() : BelongsTo
+    public function province() : BelongsTo
     {
-        return $this->belongsTo(City::class, 'capital_city_id');
+        return $this->belongsTo(Province::class, 'capital_city_id');
     }
 
     public function state() : BelongsTo
     {
-        return $this->belongsTo(State::class, 'state_id');
+        return $this->belongsTo(State::class, 'capital_city_id');
     }
 }

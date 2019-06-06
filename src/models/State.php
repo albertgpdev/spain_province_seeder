@@ -4,15 +4,16 @@ namespace Albertgpdev\SpainProvinceSeeder\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Province extends Model
+class State extends Model
 {
-    protected $table = "provinces";
+    protected $table = "states";
     protected $fillable = [
         'id',
         'slug',
         'name',
-        'state_id',
+        'country_id',
         'capital_city_id'
     ];
 
@@ -21,8 +22,8 @@ class Province extends Model
         return $this->belongsTo(City::class, 'capital_city_id');
     }
 
-    public function state() : BelongsTo
+    public function provinces() : HasMany
     {
-        return $this->belongsTo(State::class, 'state_id');
+        return $this->hasMany(Province::class, 'state_id');
     }
 }

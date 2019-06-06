@@ -44,9 +44,7 @@ class SpainProvincesProvider extends ServiceProvider
     protected function bootConfig()
     {
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-        $this->publishes([
-            __DIR__.'/models' => app_path('Models')
-        ], 'app');
+        
         $this->publishes([
             __DIR__.'/database/seeds/' => database_path('seeds')
         ], 'migrations');
