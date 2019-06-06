@@ -1,0 +1,31 @@
+{
+    "name": "albertgpdev/spain_province_seeder",
+    "keywords": ["spain", "provinces", "seeder", "laravel", "laravel5", 
+                 "albertgpdev", "symfony", "php", "php7"],
+    "description": "Seeder of all provinces of Spain",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Albert Gonzalez Pons",
+            "email": "albertgp.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php" : ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Albertgpdev\\SpainProvinceSeeder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Albertgpdev\\SpainProvinceSeeder\\Test\\": "tests/"
+        }
+    }
+}
