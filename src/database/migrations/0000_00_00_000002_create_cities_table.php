@@ -26,12 +26,12 @@ class CreateCitiesTable extends Migration
 
         if (Schema::hasTable('states')) {
             Schema::table('states', function (Blueprint $table) {
-                $table->unsignedInteger('capital_city_id')->foreign('capital_city_id')->nullable()->references('id')->on('cities')->onDelete('cascade');
+                $table->unsignedInteger('capital_city_id')->foreign('capital_city_id')->references('id')->on('cities')->onDelete('cascade')->after('id');
             });
         };
         if (Schema::hasTable('provinces')) {
             Schema::table('provinces', function (Blueprint $table) {
-                $table->unsignedInteger('capital_city_id')->foreign('capital_city_id')->references('id')->on('cities');
+                $table->unsignedInteger('capital_city_id')->foreign('capital_city_id')->references('id')->on('cities')->onDelete('cascade')->after('id');
             });
         };
 
